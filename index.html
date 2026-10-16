@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>きょうの運だめし</title>
+    <meta
+      name="description"
+      content="棚くじ風の運勢アプリ。0.1秒ごとにカードが切り替わり、気に入った瞬間を画像で保存できます。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <h1>きょうの運だめし</h1>
+      </header>
+
+      <main class="app-panel">
+        <section class="card-wrap">
+          <div class="fortune-card" id="fortuneCard" aria-live="polite">
+            <div class="card-kicker" id="cardKicker">きょうの運だめし</div>
+            <div class="fortune-label" id="fortuneLabel">準備中</div>
+            <div class="message-label" id="messageLabel">スタートを押してね！</div>
+            <div class="card-footer">HAPPY DAY!</div>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="操作パネル">
+          <div class="row row-top">
+            <label class="select-wrap">
+              <span>時間</span>
+              <select id="durationSelect">
+                <option value="10">10秒</option>
+                <option value="20">20秒</option>
+              </select>
+            </label>
+
+            <label class="select-wrap">
+              <span>曜日</span>
+              <select id="daySelect">
+                <option value="月曜日">月曜日</option>
+                <option value="火曜日">火曜日</option>
+                <option value="水曜日">水曜日</option>
+                <option value="木曜日">木曜日</option>
+                <option value="金曜日">金曜日</option>
+                <option value="土曜日">土曜日</option>
+                <option value="日曜日">日曜日</option>
+              </select>
+            </label>
+
+            <button id="startButton" class="primary-btn">スタート</button>
+            <button id="weeklyButton" class="secondary-btn">1週間を撮る</button>
+          </div>
+
+          <div class="row row-bottom">
+            <button id="captureButton" class="capture-btn" disabled>この瞬間を撮影</button>
+            <div id="statusText" class="status-text">曜日を選んで、気に入った瞬間を撮影！</div>
+          </div>
+        </section>
+
+        <section class="gallery-panel" aria-label="保存済み写真">
+          <h2>保存済み写真</h2>
+          <div class="gallery" id="gallery"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
